@@ -51,3 +51,43 @@ input, textarea {
   border: 1px solid #aaa;
   border-radius: 4px;
 }
+
+textarea {
+  height: 200px;
+}
+
+.note-form {
+  margin: 0 auto;
+  width: 450px;
+  margin-top: 25px;
+}
+
+.note-form input, .note-form textarea {
+  display: block;
+  width: 100%;
+}
+
+
+.note-form button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background: whitesmoke;
+  color: black;
+}
+
+.characters-left {
+  float: right;
+  font-size: 14px;
+  color: #aaa;
+}

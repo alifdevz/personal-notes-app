@@ -8,4 +8,9 @@ import { getInitialData, showFormattedDate } from './utils/index';
 
 
 const root = createRoot(document.getElementById('root'));
-root.render(<NoteHeader />);
+root.render(
+<div>
+    <NoteHeader />
+    <NoteInput />
+</div>
+);
