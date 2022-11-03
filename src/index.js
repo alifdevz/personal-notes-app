@@ -1,16 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import NoteHeader from './components/NoteHeader';
-import NoteInput from './components/NoteInput';
+import PersonalNotesApp from './components/PersonalNotesApp';
 import './styles/style.css';
-import { getInitialData, showFormattedDate } from './utils/index';
-
-
 
 const root = createRoot(document.getElementById('root'));
-root.render(
-<div>
-    <NoteHeader />
-    <NoteInput />
-</div>
-);
+root.render(<PersonalNotesApp />);
