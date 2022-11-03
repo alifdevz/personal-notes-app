@@ -9,3 +9,45 @@ body {
   background-color: #202124;
   color: white;
 }
+
+.header {
+  margin: 10px;
+}
+
+.note-and-search {
+  display: flex;
+}
+
+.header h1 {
+  display: inline;
+  flex-grow: 1;
+}
+
+.note-search-wrapper {
+  flex-grow: 1;
+  display: inline;
+}
+
+.note-search {
+  float: right;
+  height: 100%;
+  width: 40%;
+}
+
+.header-line {
+  margin-top: 8px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 12px;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
