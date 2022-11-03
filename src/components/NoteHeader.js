@@ -12,7 +12,9 @@ class NoteHeader extends React.Component {
     }
 
     onSearchKeywordChangeEventHandler(event) {
-        
+        this.setState({
+            searchKeyword: event.target.value
+        });
     }
 
     render() {
