@@ -7,4 +7,11 @@ import { getInitialData, showFormattedDate } from './utils/index';
 
 
 const root = createRoot(document.getElementById('root'));
-root.render(<NoteInput />);
+root.render(
+    <div className="note-app__header">
+        
+        <h1 className='.note-app__header h1'>Note</h1>
+        <NoteInput />
+        
+    </div>
+);
