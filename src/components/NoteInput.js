@@ -11,6 +11,10 @@ class NoteInput extends React.Component {
             createdAt: +new Date(),
             archived: false
         }
+
+        this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
+        this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this);
+        this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
     }
 
     onTitleChangeEventHandler(event) {
@@ -27,13 +31,13 @@ class NoteInput extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmitEventHandler}>
+            <>
+                <form onSubmit={this.onSubmitEventHandler} className="note-form">
                     <input placeholder="Ini adalah judul..." value={this.state.title} onChange={this.onTitleChangeEventHandler} />
                     <textarea placeholder="Tulislah catatanmu di sini..." value={this.state.body} onChange={this.onBodyChangeEventHandler} />
                     <button type="submit">Buat</button>
                 </form>
-            </div>
+            </>
         )
     }
 }

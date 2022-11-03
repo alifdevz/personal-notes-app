@@ -2,9 +2,13 @@ import React from "react";
 
 class NoteHeader extends React.Component {
     constructor(props) {
+        super(props);
+
         this.state = {
             searchKeyword: ''
         }
+
+        this.onSearchKeywordChangeEventHandler = this.onSearchKeywordChangeEventHandler.bind(this);
     }
 
     onSearchKeywordChangeEventHandler(event) {
