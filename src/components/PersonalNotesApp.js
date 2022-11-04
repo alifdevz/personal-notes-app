@@ -34,10 +34,10 @@ class PersonalNotesApp extends React.Component {
     render() {
         console.log(this.state.notes);
         return (
-            <div>
+            <>
                 <NoteHeader />
                 <NoteInput addNote={this.onAddNoteHandler} />
-            </div>
+            </>
         )
     }
 }
