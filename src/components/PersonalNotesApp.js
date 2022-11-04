@@ -2,7 +2,7 @@ import React from "react";
 import NoteHeader from './NoteHeader';
 import NoteInput from './NoteInput';
 import { getInitialData, showFormattedDate } from '../utils/index';
-import NoteItem from "./NoteItem";
+import NoteList from "./NoteList";
 
 class PersonalNotesApp extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class PersonalNotesApp extends React.Component {
             <>
                 <NoteHeader />
                 <NoteInput addNote={this.onAddNoteHandler} />
-                <NoteItem />
+                <NoteList notes={this.state.notes} />
             </>
         )
     }
