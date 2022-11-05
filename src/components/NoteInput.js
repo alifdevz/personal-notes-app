@@ -70,7 +70,8 @@ class NoteInput extends React.Component {
                     <textarea 
                         placeholder="Tulislah catatanmu di sini..." 
                         value={this.state.body} 
-                        onChange={this.onBodyChangeEventHandler} />
+                        onChange={this.onBodyChangeEventHandler} 
+                    />
                     <button type="submit">Buat</button>
                 </form>
             </div>
