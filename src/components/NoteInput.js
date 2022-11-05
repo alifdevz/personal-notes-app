@@ -23,11 +23,9 @@ class NoteInput extends React.Component {
         let chars = event.target.value;
         let difference = 50 - chars.length;
         if (difference >= 0) {
-            this.setState(
-                {
-                    availableTitleChars: difference
-                } 
-            );
+            this.setState({
+                availableTitleChars: difference
+            });
         }
     }
 
@@ -59,10 +57,10 @@ class NoteInput extends React.Component {
                 <br />
                 <span className="characters-left">Sisa karakter: {this.state.availableTitleChars}</span>
                 <form onSubmit={this.onSubmitEventHandler} >
-                    <input 
+                    <input
                         placeholder="Ini adalah judul..."
                         value={this.state.title}
-                        onChange={(event) =>{
+                        onChange={(event) => {
                             this.onTitleChangeEventHandler(event);
                             this.onCharLimitChangeEventHandler(event);
                         }}
