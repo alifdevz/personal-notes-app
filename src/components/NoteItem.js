@@ -1,14 +1,10 @@
 import React from "react";
-import { showFormattedDate } from '../utils/index'
+import NoteItemContent from "./NoteItemContent";
 
-function NoteItem({ id, title, body, createdAt, archived, availableTitleChars }) {
+function NoteItem({ note }) {
     return (
         <div className="note-item">
-            <div className="note-item__content">
-                <h4 className="note-item__title">{title}</h4>
-                <div className="note-item__date">{showFormattedDate(createdAt)}</div>
-                <p className="note-item__body">{body}</p>
-            </div>
+            <NoteItemContent {...note} />
             <div className="note-item__action">
                     <button className="note-item__delete-button">Hapus</button>
                     <button className="note-item__archive-button">Arsipkan</button>
