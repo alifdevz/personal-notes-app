@@ -105,6 +105,10 @@ textarea {
   background: transparent;
 }
 
+.note-list > h2 {
+  margin-bottom: 15px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
