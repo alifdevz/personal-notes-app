@@ -11,6 +11,11 @@ class PersonalNotesApp extends React.Component {
             notes: getInitialData()
         }
 
+        // format date
+        // for (let i = 0; i < this.state.notes.length; i++) {
+        //     this.state.notes[i].createdAt = showFormattedDate(this.state.notes[i].createdAt)
+        // }
+        
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
     }
 
@@ -33,7 +38,7 @@ class PersonalNotesApp extends React.Component {
     }
 
     render() {
-        console.log(this.state.notes);
+        // console.log(this.state.notes);
         return (
             <>
                 <NoteHeader />
