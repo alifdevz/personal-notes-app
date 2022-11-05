@@ -1,14 +1,14 @@
 import React from "react";
-import NoteItem from "./NoteItem";
+import EmptyNotesMessage from "./EmptyNotesMessage";
+import GridNoteItems from "./GridNoteItems";
 
 function NoteList({ notes }) {
-    // console.log('notelist', notes)
     return (
         <div className="note-list">
             <h2>Catatan Aktif</h2>
-            <div className="grid-container">
-                {notes.map(note => <NoteItem key={note.id} {...note} />)}
-            </div>
+            {notes
+            ? <GridNoteItems notes={notes} />
+            : <EmptyNotesMessage />}
         </div>
     )
 }
