@@ -6,7 +6,11 @@ function NoteItem({ note, onDelete, onArchive }) {
     return (
         <div className="note-item">
             <NoteItemContent {...note} />
-            <NoteItemAction id={note.id} onDelete={onDelete} onArchive={onArchive} />
+            <NoteItemAction id={note.id}
+                            onDelete={onDelete} 
+                            onArchive={onArchive} 
+                            archived={note.archived} 
+            />
         </div>
     )
 }

@@ -3,6 +3,7 @@ import NoteHeader from './NoteHeader';
 import NoteInput from './NoteInput';
 import { getInitialData } from '../utils/index';
 import NoteList from "./NoteList";
+import ArchivedNoteList from "./ArchivedNoteList";
 
 class PersonalNotesApp extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class PersonalNotesApp extends React.Component {
 
     onArchiveHandler(id) {
         let archivedNote = this.state.notes.find(note => note.id === id);
-        archivedNote.archived = true;
+        archivedNote.archived = archivedNote.archived ? false : true;
         let notArchivedNotes = this.state.notes.filter(note => note.id !== id);
         this.setState((prevState) => {
             return {
@@ -61,7 +62,7 @@ class PersonalNotesApp extends React.Component {
     }
 
     render() {
-        // console.log(this.state.notes)
+        console.log(this.state.notes)
         return (
             <>
                 <NoteHeader notes={this.state.notes} onSearch={this.onSearchHandler} />
@@ -69,10 +70,13 @@ class PersonalNotesApp extends React.Component {
                 <NoteList 
                     notes={this.state.searchKeyword 
                         ? this.state.searchResultNotes 
-                        : this.state.notes} 
+                        : this.state.notes.filter(note => !note.archived)} 
                     onDelete={this.onDeleteHandler}
                     onArchive={this.onArchiveHandler}
                 />
+                <ArchivedNoteList notes={this.state.notes.filter(note => note.archived)}
+                    onDelete={this.onDeleteHandler}
+                    onArchive={this.onArchiveHandler}/>
             </>
         )
     }
