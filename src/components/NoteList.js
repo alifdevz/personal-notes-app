@@ -6,7 +6,7 @@ function NoteList({ notes, onDelete, onArchive }) {
     return (
         <div className="note-list">
             <h2>Catatan Aktif</h2>
-            {notes
+            {notes.length
             ? <GridNoteItems notes={notes} onDelete={onDelete} onArchive={onArchive} />
             : <EmptyNotesMessage />}
         </div>

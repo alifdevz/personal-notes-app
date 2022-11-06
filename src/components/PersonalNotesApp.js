@@ -62,7 +62,7 @@ class PersonalNotesApp extends React.Component {
     }
 
     render() {
-        // console.log(this.state.notes)
+        console.log(this.state.notes)
         return (
             <>
                 <NoteHeader notes={this.state.notes} onSearch={this.onSearchHandler} />
