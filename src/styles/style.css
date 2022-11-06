@@ -93,16 +93,11 @@ textarea {
   color: #aaa;
 }
 
-/* .note-list {
-  margin: 0 auto;
-  background: transparent;
-  width: 50%;
-} */
-
 .note-list {
   width: 86%;
   margin: 0 auto;
   background: transparent;
+  margin-bottom: 30px;
 }
 
 .note-list > h2 {
