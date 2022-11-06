@@ -8,7 +8,7 @@ class NoteItemAction extends React.Component {
     render() {
         return (
             <div className="note-item__action">
-                <button className="note-item__delete-button">Hapus</button>
+                
                 <button className="note-item__archive-button">Arsipkan</button>
             </div>
         )
