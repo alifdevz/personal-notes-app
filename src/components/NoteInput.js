@@ -5,10 +5,10 @@ class NoteInput extends React.Component {
         super(props);
 
         this.state = {
-            id: +new Date(),
+            id: '',
             title: '',
             body: '',
-            createdAt: +new Date(),
+            createdAt: '',
             archived: false,
             availableTitleChars: 50
         }

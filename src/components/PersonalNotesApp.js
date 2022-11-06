@@ -15,6 +15,12 @@ class PersonalNotesApp extends React.Component {
 
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
         this.onSearchHandler = this.onSearchHandler.bind(this);
+        this.onDeleteHandler = this.onDeleteHandler.bind(this);
+    }
+
+    onDeleteHandler(id) {
+        const notes = this.state.notes.filter(note => note.id !== id);
+        this.setState({ notes });
     }
 
     onSearchHandler(searchKeyword) {
@@ -31,12 +37,11 @@ class PersonalNotesApp extends React.Component {
                 notes: [
                     ...prevState.notes,
                     {
-                        id,
+                        id: +new Date(),
                         title,
                         body,
-                        createdAt: showFormattedDate(createdAt),
-                        archived,
-                        availableTitleChars
+                        createdAt: showFormattedDate(+new Date()),
+                        archived
                     }
                 ]
             }
@@ -48,7 +53,12 @@ class PersonalNotesApp extends React.Component {
             <>
                 <NoteHeader notes={this.state.notes} onSearch={this.onSearchHandler} />
                 <NoteInput addNote={this.onAddNoteHandler} />
-                <NoteList notes={this.state.searchKeyword ? this.state.searchResultNotes : this.state.notes} />
+                <NoteList 
+                    notes={this.state.searchKeyword 
+                        ? this.state.searchResultNotes 
+                        : this.state.notes} 
+                    onDelete={this.onDeleteHandler}
+                />
             </>
         )
     }
