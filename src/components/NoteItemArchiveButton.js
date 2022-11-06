@@ -1,8 +1,8 @@
 import React from "react";
 
-function NoteItemArchiveButton() {
+function NoteItemArchiveButton({ id, onArchive}) {
     return (
-        <button className="note-item__archive-button">Arsipkan</button>
+        <button className="note-item__archive-button" onClick={() => onArchive(id)}>Arsipkan</button>
     )
 }
 

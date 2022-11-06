@@ -2,11 +2,11 @@ import React from "react";
 import NoteItemArchiveButton from "./NoteItemArchiveButton";
 import NoteItemDeleteButton from "./NoteItemDeleteButton";
 
-function NoteItemAction({ id, onDelete }) {
+function NoteItemAction({ id, onDelete, onArchive }) {
     return (
         <div className="note-item__action">
             <NoteItemDeleteButton id={id} onDelete={onDelete} />
-            <NoteItemArchiveButton />
+            <NoteItemArchiveButton id={id} onArchive={onArchive} />
         </div>
     )
 }

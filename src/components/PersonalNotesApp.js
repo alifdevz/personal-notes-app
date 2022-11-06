@@ -16,6 +16,18 @@ class PersonalNotesApp extends React.Component {
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
         this.onSearchHandler = this.onSearchHandler.bind(this);
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
+        this.onArchiveHandler = this.onArchiveHandler.bind(this);
+    }
+
+    onArchiveHandler(id) {
+        let archivedNote = this.state.notes.find(note => note.id === id);
+        archivedNote.archived = true;
+        let notArchivedNotes = this.state.notes.filter(note => note.id !== id);
+        this.setState((prevState) => {
+            return {
+                notes: [...notArchivedNotes, archivedNote]
+            }
+        });
     }
 
     onDeleteHandler(id) {
@@ -26,7 +38,7 @@ class PersonalNotesApp extends React.Component {
     onSearchHandler(searchKeyword) {
         this.setState({ searchKeyword }); // sengaja dibuat sama dengan nama objectnya biar gampang ditimpa nilainya
         // console.log(searchKeyword)
-        let searchResultNotes = this.state.notes.filter(note => note.title.toUpperCase().includes(searchKeyword.toUpperCase()));
+        const searchResultNotes = this.state.notes.filter(note => note.title.toUpperCase().includes(searchKeyword.toUpperCase()));
         this.setState({ searchResultNotes });
         // console.log(this.state)
     }
@@ -49,6 +61,7 @@ class PersonalNotesApp extends React.Component {
     }
 
     render() {
+        // console.log(this.state.notes)
         return (
             <>
                 <NoteHeader notes={this.state.notes} onSearch={this.onSearchHandler} />
@@ -58,6 +71,7 @@ class PersonalNotesApp extends React.Component {
                         ? this.state.searchResultNotes 
                         : this.state.notes} 
                     onDelete={this.onDeleteHandler}
+                    onArchive={this.onArchiveHandler}
                 />
             </>
         )
