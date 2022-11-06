@@ -9,7 +9,7 @@ class NoteItemAction extends React.Component {
         return (
             <div className="note-item__action">
                 
-                <button className="note-item__archive-button">Arsipkan</button>
+                
             </div>
         )
     }
