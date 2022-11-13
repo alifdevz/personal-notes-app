@@ -39,7 +39,7 @@ class PersonalNotesApp extends React.Component {
     onSearchHandler(searchKeyword) {
         this.setState({ searchKeyword }); // sengaja dibuat sama dengan nama objectnya biar gampang ditimpa nilainya
         // console.log(searchKeyword)
-        const searchResultNotes = this.state.notes.filter(note => note.title.toUpperCase().includes(searchKeyword.toUpperCase()) && !note.archived);
+        const searchResultNotes = this.state.notes.filter(note => note.title.toUpperCase().includes(searchKeyword.toUpperCase()));
         this.setState({ searchResultNotes });
         // console.log(this.state)
     }
